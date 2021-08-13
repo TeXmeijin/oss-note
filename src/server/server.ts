@@ -1,4 +1,5 @@
-import fastifyLib, {FastifyReply, FastifyRequest} from 'fastify'
+import fastifyLib from 'fastify'
+import {getFileTree} from "./lib/getFileTree";
 
 export async function startServer(arg: {
   port: number
@@ -14,8 +15,4 @@ export async function startServer(arg: {
     }
     fastify.log.info(`server listening on ${address}`)
   })
-}
-
-export function getFileTree(req: FastifyRequest, reply: FastifyReply) {
-  reply.send('Hello')
 }
